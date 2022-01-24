@@ -98,7 +98,7 @@ app.post("/mailsent",function(req,res){
                                            <div align="center"> 
                                                Hi,welcome to MovieKhor!
                                                <br>
-                                               
+                                                <hr>
                                                <b>Movie Name</b>
                                                   <br>
                                                   ${req.body.movie} 
