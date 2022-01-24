@@ -12,7 +12,7 @@ var express				=require("express"),
   
 
     session             =require("express-session");  
-
+var port=process.env.PORT || 3999;
 app.use(body.urlencoded({extended:false}))     
 
 app.use(flash())
@@ -156,7 +156,7 @@ app.post("/download",function(req,res){
      res.render("download.ejs",{magnet:req.body.magnet,film:req.body.film})
 })
 
-app.listen(3999,function(){
+app.listen(port,function(){
 
   console.log("server started")
 
