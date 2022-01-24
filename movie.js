@@ -85,13 +85,13 @@ app.post("/mailsent",function(req,res){
      var transport=nodemailer.createTransport({
          service:"gmail",
          auth:{
-          user:"grocery.ofc@gmail.com",
+          user:"moviekhors.ofc@gmail.com",
           pass:process.env.password
         }
      })
    
                    var mailoptions={
-                                           from:"grocery.ofc@gmail.com",
+                                           from:"moviekhors.ofc@gmail.com",
                                            bcc:`${req.body.email}`,
                                            subject:`MovieKhor!`,
                                            html:`
