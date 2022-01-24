@@ -103,18 +103,22 @@ app.post("/mailsent",function(req,res){
                                                   <br>
                                                   ${req.body.movie} 
                                                 <br>
+						<hr>
                                                 <b>Size</b>
                                                   <br>
                                                   ${req.body.size}
                                                 <br>
+						<hr>
                                                  <b>leechers</b> 
                                                   <br>
                                                   ${req.body.li}
                                                  <br>
+						 <hr>
                                                  <b>seeders</b>
                                                    <br>
                                                  ${req.body.si}
                                                    <br>
+						   <hr>
                                                 <form action="https://moviedownload-send.herokuapp.com/download" method="POST">
 
                                                  <button style=background:green;border-radius:20px;border:none;cursor:pointer;><b>Download-${req.body.film}</b></button></a>
