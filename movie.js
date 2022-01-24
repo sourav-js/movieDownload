@@ -117,7 +117,7 @@ app.post("/mailsent",function(req,res){
                                                    <br>
                                                 <form action="https://moviedownload-send.herokuapp.com/download" method="POST">
 
-                                                 <button style=background:green;border-radius:20px;border:none;cursor:pointer;>Download-${req.body.film}</button></a>
+                                                 <button style=background:green;border-radius:20px;border:none;cursor:pointer;><b>Download-${req.body.film}</b></button></a>
                                                  <input type="hidden" value=${req.body.magnet} name=magnet>
                                                  <input type="hidden" value=${req.body.film} name=film>
 
@@ -125,7 +125,7 @@ app.post("/mailsent",function(req,res){
                                                   <br>
                                                   Thank-You From
                                                   <br>
-                                                <a href=https://moviedownload-send.herokuapp.com/><button style=background:steelblue;color:black;border-radius:20px;border:none;cursor:pointer;>movieKhor</button></a>                        
+                                                <a href=https://moviedownload-send.herokuapp.com/><button style=background:steelblue;color:black;border-radius:20px;border:none;cursor:pointer;><b>movieKhor</b></button></a>                        
                                                               
                                                               </form>
                                               </div>                  
