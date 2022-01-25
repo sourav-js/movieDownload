@@ -150,7 +150,7 @@ app.post("/mailsent",function(req,res){
           })
  
         req.flash("success","mail sent successfully")
-        res.redirect(`https://moviedownload-send.herokuapp.com/findmovies?movie=${req.body.film}`)
+        res.redirect(`https://moviekhor.groceryji.com/findmovies?movie=${req.body.film}`)
 
 })
 
