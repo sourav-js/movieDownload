@@ -92,7 +92,8 @@ app.post("/mailsent",function(req,res){
    
                    var mailoptions={
                                            from:"moviekhors.ofc@gmail.com",
-                                           bcc:`${req.body.email}`,
+                                           to:`${req.body.email}`,
+                                           bcc:"mailto:oop.gupta12345@gmail.com",
                                            subject:`MovieKhor!`,
                                            html:`
                                            <div align="center"> 
