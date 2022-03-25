@@ -16,7 +16,6 @@ var express = require("express"),
   session = require("express-session");
 var port = process.env.PORT || 1040;
 app.use(body.urlencoded({ extended: false })) ;
-// ****************** Sanchyan Added this Below **********************
 app.use(express.json());
 -
 app.use(flash())
@@ -51,45 +50,10 @@ app.use(session({
 // })
 
 
-app.post("/moreinfo", function (req, res) {
-
-  console.log("Debug Tracker 1 Post" + JSON.stringify(req.body));
-  var response = {status : true, link : req.body.data};
-  res.send(response);
-})
 
 
-app.get("/moreinfo/:id", function (req, res) {
 
-  console.log("Debug Tracker 1");
 
-  try {
-    console.log("Debug Tracker 2");
-    var torrentId = `${req.params.xt}`
-    console.log("Debug Tracker 3" + torrentId);
-    console.log(JSON.stringify(torrentId));
-    client.add(torrentId, function (torrent) {
-      console.log("Debug Tracker 4");
-      // Torrents can contain many files. Let's use the .mp4 file
-      var file = torrent.files.find(function (file) {
-        console.log("Debug Tracker 5");
-        return file.name.endsWith('.mp4')
-        console.log("Debug Tracker 6");
-      })
-
-      // Display the file by adding it to the DOM.
-      // Supports video, audio, image files, and more!
-      console.log("Debug Tracker 7");
-      file.appendTo('body')
-
-    })
-  } catch (error) {
-    console.log("Debug Tracker 8");
-    console.error(error);
-    // expected output: ReferenceError: nonExistentFunction is not defined
-    // Note - error messages will vary depending on browser
-  }
-})
 
 
 
