@@ -58,7 +58,48 @@ body{
 
 
 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Copy URL</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">URL</label>
+            <input type="text" id="film"class="form-control" id="recipient-name">
+          </div>
+                 <button type="button" class="btn btn-primary" onclick="myFunction()">Copy</button>
 
+        <script type="text/javascript">    
+
+              
+              
+              function myFunction() {
+          /* Get the text field */
+          var copyText = document.getElementById("film");
+
+          /* Select the text field */
+          copyText.select();
+          copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+           /* Copy the text inside the text field */
+          navigator.clipboard.writeText(copyText.value);
+
+          /* Alert the copied text */
+          alert("text copied");
+        }
+      </script> 
+        </form>
+      
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
 
 
   <div style="padding-top:10px" align="center"> 
@@ -161,7 +202,6 @@ body{
             <li><a class="dropdown-item" href="#"><div style="box-shadow:2px 2px 2px maroon;width:33px;border-radius:30px;display:inline"><a href='<%=$(el).find(".vertTh").next().next().next().find("a").attr("href")%>'><i class="fas fa-arrow-circle-down its" style="color:maroon;font-size:27px"></i></a></div></a></li>
             <br>
             <li style="border:none;cursor:pointer"> <div style="box-shadow:2px 2px 2px maroon;width:33px;border-radius:30px;display:inline">
-            <form action="/mail" method="POST" class="formone"> 
               <input type="hidden" value="<%=values%>" name="film">
               <input type="hidden" class="form-control" name="names" value="<%=$(el).find(".vertTh").next().text()%>">
                   <input type="hidden" class="form-control" name="size" value="<%=$(el).find(".vertTh").next().next().next().next().text().replace("B","").replace("i","B")%>">
@@ -169,9 +209,16 @@ body{
                 <input type="hidden" class="form-control" name="li" value=<%=$(el).find(".vertTh").next().next().next().next().next().text()%>>
                 <input type="hidden" class="form-control" name="si" value=<%=$(el).find(".vertTh").next().next().next().next().next().next().text()%>>
 
-                <input type="hidden" class="form-control" name="magnet" value="<%=$(el).find(".vertTh").next().next().next().find("a").attr("href")%>">
-                <button class="btn btn-outline-none"><i class="fas fa-paper-plane its"  style="color:maroon;font-size:27px " ></i></div></li></button>
-          </form>
+      <input type="hidden" class="form-control" name="magnet" value="<%=$(el).find(".vertTh").next().next().next().find("a").attr("href")%>">
+                <button class="btn btn-outline-none" data-bs-toggle="modal"  data-bs-target="#exampleModal" data-bs-whatever="@fat"><i class="fas fa-paper-plane its"  id="<%=i%>" style="color:maroon;font-size:27px " ></i></div></li></button>
+         <script type="text/javascript">            
+          $("#<%=i%>").on("click",function(){
+              
+               $("#film").val("http://localhost:1040/download/<%=$(el).find(".vertTh").next().next().next().find("a").attr("href")%>")
+
+
+          })
+        </script>
           </ul>
         </div>
      

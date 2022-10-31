@@ -190,9 +190,11 @@ app.post("/mailsent", function (req, res) {
 })
 
 
-app.post("/download", function (req, res) {
+app.get("/download/:id", function (req, res) {
 
-  res.render("download.ejs", { magnet: req.body.magnet, film: req.body.film })
+  var url=`${req.params.id}`
+  console.log(url)
+  res.render("download.ejs", { magnet: `${url}`, film: req.body.film })
 })
 
 app.listen(port, function () {
