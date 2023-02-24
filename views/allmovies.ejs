@@ -214,7 +214,7 @@ body{
          <script type="text/javascript">            
           $("#<%=i%>").on("click",function(){
               
-               $("#film").val("http://localhost:1040/download/<%=$(el).find(".vertTh").next().next().next().find("a").attr("href")%>")
+               $("#film").val("<%=$(el).find(".vertTh").next().next().next().find("a").attr("href")%>")
 
 
           })

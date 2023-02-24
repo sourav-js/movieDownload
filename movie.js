@@ -193,8 +193,8 @@ app.post("/mailsent", function (req, res) {
 app.get("/download/:id", function (req, res) {
 
   var url=`${req.params.id}`
-  console.log(url)
-  res.render("download.ejs", { magnet: `${url}`, film: req.body.film })
+  res.send(req.params)
+  // res.render("download.ejs", { magnet: `${url}`, film: req.body.film })
 })
 
 app.listen(port, function () {
